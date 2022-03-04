@@ -5,7 +5,7 @@ Réaliser un shop et un crud avec Django : ajout, modification, supression des a
 Chat en temps réel (Socket io ou Channel) 
 
 ## Fonctionnement
- Le Crud est complètement fonctionnel ainsi que la gestion des stocks. <br/>
+ Le Crud est complètement fonctionnel ainsi que la gestion des stocks. Lorsque qu'un article a une quantité de 0, il n'est plus visible dans la boutique. <br/>
  Concernant le chat, comme vu avec Pierrick, impossible de faire fonctionner socket ou channel (erreur lors de la commande python -m pip install channels_redis). <br/>
  Le début de notre travail est tout de même disponible sur la page : http://127.0.0.1:8000/appdjango1/chat/discussion  <br/>
  Pour tenter de compenser, un système de Login a également été débuté sur la page : http://127.0.0.1:8000/appdjango1/login  <br/>
