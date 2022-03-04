@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <div><img src="{% static 'img/logo_django.png' %}" alt="logo"></div>
+    <div><a href="chat/discussion/"> CHAT</a> <a href="login"> LOGIN</a></div>
+  </header>
+  
+  <div class="main_achat">
+      
+    <div class="detail_produit">
+
+      <!-- Specify fields to be displayed -->
+      <div><img src="{{ data.lienimage }}"></div>
+
+      <div>
+        <span style="font-size : 30px; font-weight:bold;">{{ data.titre }}</span>
+        <span style="font-size: 12px;">{{ data.description }}</span>
+        <span style="font-size: 20px;font-weight: bold;">{{ data.prix }}€</span>
+        <span style="font-size: 12px;">Stock : {{ data.quantite }}</span>
+
+        <form method="POST" enctype="multipart/form-data">
+            <!-- Security token -->
+            {% csrf_token %}
+          
+            <!-- Using the formset -->
+            <!--  {{ form.as_p }}-->
+            <input id="id_quantite" type="number" name="quantite" min="1" max="{{ data.quantite }}">
+            <input type="submit" value="Achetez">
+        </form>
+      </div>
+
+    </div>
+
+    <div class="action_produit">
+      <button onclick="window.location.href = '{{data.id}}/update';">Modifier</button>
+      <button onclick="window.location.href = '{{data.id}}/delete';">Supprimer</button>
+      <button onclick="window.location.href = 'list';">Retour à la liste</button>
+    </div>
+
+  </div>
+<body>
+</html>

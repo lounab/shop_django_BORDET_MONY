@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Titre de la page</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <div><img src="{% static 'img/logo_django.png' %}" alt="logo"></div>
+    <div><a href="chat/discussion/"> CHAT</a> <a href="login"> LOGIN</a></div>
+  </header>
+  <div class="main">
+    <h1>Boutique</h1>
+    <div class="boutique">
+      {% for data in dataset %}
+
+      {% if data.quantite > 0 %}
+      <div class="produit">
+        <div><img src="{{ data.lienimage }}"></div>
+        <div>
+          <span style="font-weight:bold;">{{ data.titre }}</span>
+          <span style="font-size: 12px;">{{ data.description }}</span>
+          <span style="font-size: 20px;font-weight: bold;">{{ data.prix }}€</span>
+          <span style="font-size: 12px;">Stock : {{ data.quantite }}</span></div>
+        <div>
+        <button onclick="window.location.href = '{{data.id}}';"> Voir détail</button></div>
+      </div>
+
+      {% endif %}
+
+      {% endfor %}
+
+    </div>
+
+    <div class="create_objet">
+      <h1>Ajouter un article</h1>
+      <form method="POST" enctype="multipart/form-data">
+
+        <!-- Security token -->
+        {% csrf_token %}
+      
+        <!-- Using the formset -->
+        {{ form.as_p }}
+          
+        <input type="submit" value="Ajouter">
+      </form>
+    </div>
+  </div>
+</body>
+</html>

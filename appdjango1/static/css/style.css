@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    width: auto;
+    height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img{
+    max-height: 35px;
+}
+
+h1{
+    margin: 20px 0 ;
+    padding: 0;
+    text-align: center;
+}
+
+button, input[type=submit], input[type=button]{
+    font-family: 'Montserrat', sans-serif;
+    background-color:rgb(130, 172, 255) ;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+button:hover, input[type=submit]:hover{
+    background-color:rgb(72, 123, 224) ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.boutique{
+    width: 70%;
+    margin: auto;
+    gap: 40px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px !important;
+}
+
+.produit{
+    background-color: rgb(212, 226, 255);
+    border-radius: 20px;
+    min-width: 200px;
+    transform: scale(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: -10px 10px 0px 0px rgb(130, 172, 255);
+    transition: transform 100ms linear;
+}
+.produit:hover{
+    transform: scale(1.04);
+}
+
+.produit img{
+    border-radius: 10px;
+    max-height : 200px;
+    object-fit: cover;
+    width: 200px;
+}
+.produit span{
+    margin:8px;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.create_objet{
+    padding:  10px 50px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 50px !important;
+}
+.create_objet p{
+    display: grid;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+.create_objet label{
+    padding: 7px 0;
+    text-align : left;
+}
+.create_objet input[type=text],.create_objet input[type=number], .create_objet textarea{
+    border: none;
+    border-radius: 3px;
+    padding: 10px 10px;
+    background-color: rgb(212, 226, 255);
+}
+
+.create_objet input[type=text]:focus,.create_objet input[type=number]:focus, .create_objet textarea:focus{
+    background-color: rgb(174, 201, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main_achat .detail_produit{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.main_achat .detail_produit img{
+    height: 500px;
+}
+
+.main_achat .detail_produit span{
+    margin: 8px 0;
+    display: block;
+}
+
+.main_achat .detail_produit #id_quantite{
+    height: 22px;
+    width: 70px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.main_achat .action_produit{
+    max-width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+}
